@@ -6,20 +6,13 @@ function App() {
   console.log({ submitPayment });
 
   return (
-    <div
-      style={{
-        width: "70%",
-        margin: "0 auto",
-        marginTop: "20px",
-        textAlign: "center",
-      }}
-    >
+    <div className="w-7/10 mx-auto mt-5 text-center">
       <PaymentsForOrder />
 
       <div className="mt-4">
         <button
           onClick={() => submitPayment()}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
         >
           Click me
         </button>
