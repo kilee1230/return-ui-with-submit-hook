@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface TestComponentProps {
   setSubmitPaymentFn: (fn: () => void) => void;
@@ -8,20 +8,15 @@ export default function TestComponent({
   setSubmitPaymentFn,
 }: TestComponentProps) {
   const [value, setValue] = useState("");
-  const valueRef = useRef(value);
-
-  useEffect(() => {
-    valueRef.current = value;
-  }, [value]);
 
   const handleSubmit = () => {
-    console.log("hehhe: ", valueRef.current);
+    console.log("hehhe: ", value);
   };
 
   useEffect(() => {
     console.log({ check3: setSubmitPaymentFn });
     setSubmitPaymentFn(handleSubmit);
-  }, [setSubmitPaymentFn]);
+  }, [setSubmitPaymentFn, handleSubmit]);
 
   return (
     <input
